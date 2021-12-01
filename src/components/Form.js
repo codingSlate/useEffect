@@ -30,7 +30,7 @@ function Form() {
     }, millisec);
 
     return () => {
-      setTimeout(cleanTimerID);
+      clearTimeout(cleanTimerID); // clearTimeout
     };
   }, [inputNum]);
 
