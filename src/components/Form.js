@@ -18,14 +18,20 @@ function Form() {
   };
 
   useEffect(() => {
-    if (inputNum.length >= 0) {
-      // console.log('inputNum.length > 0', inputNum.length);
-      setCountNum((c) => (c = inputNum.length));
-    } else {
-      // console.log('should not be empty');
-    }
+    let millisec = 3000;
 
-    console.log('each stroke useEffect call ☹️');
+    const cleanTimerID = setTimeout(() => {
+      if (inputNum.length >= 0) {
+        setCountNum((c) => (c = inputNum.length));
+        console.log(`I am with cleanup 😃 ${millisec} second`);
+      } else {
+        console.log('should not be empty');
+      }
+    }, millisec);
+
+    return () => {
+      setTimeout(cleanTimerID);
+    };
   }, [inputNum]);
 
   return (
@@ -41,7 +47,7 @@ function Form() {
           onChange={numChangeHandler}
           value={inputNum}
         />
-       { countNum > 0 ?  <p>Length is : {countNum}</p> :  <p>Empty Length!!</p>}
+        {countNum > 0 ? <p>Length is : {countNum}</p> : <p>Empty Length!!</p>}
         <input className="input" type="submit" />
       </form>
     </div>
