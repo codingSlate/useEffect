@@ -26,7 +26,7 @@ function Form() {
     }
 
     console.log('each stroke useEffect call ☹️');
-  }, [inputNum]);
+  }, []);
 
   return (
     <div>
