@@ -18,7 +18,7 @@ function Form() {
   };
 
   useEffect(() => {
-    let millisec = 3000;
+    let millisec = 500;
 
     const cleanTimerID = setTimeout(() => {
       if (inputNum.length >= 0) {
