@@ -6,7 +6,6 @@ function Form() {
   const [inputNum, setInputNum] = useState(0);
   const [countNum, setCountNum] = useState('');
 
-
   const submitHandler = (e) => {
     e.preventDefault();
     setInputNum(''); // reset value
