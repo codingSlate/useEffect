@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 function Form() {
   const [inputNum, setInputNum] = useState(0);
   const [countNum, setCountNum] = useState('');
-  // const countNum = useRef(0);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
