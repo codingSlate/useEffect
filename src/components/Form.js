@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 function Form() {
   const [inputNum, setInputNum] = useState(0);
-  const [countNum, setCountNum] = useState(0);
+  const [countNum, setCountNum] = useState('');
   // const countNum = useRef(0);
 
   const submitHandler = (e) => {
@@ -19,11 +19,13 @@ function Form() {
 
   useEffect(() => {
     if (inputNum.length >= 0) {
-      console.log('inputNum.length > 0', inputNum.length);
+      // console.log('inputNum.length > 0', inputNum.length);
       setCountNum((c) => (c = inputNum.length));
     } else {
-      console.log('should not be empty');
+      // console.log('should not be empty');
     }
+
+    console.log('each stroke useEffect call ☹️');
   }, [inputNum]);
 
   return (
@@ -39,7 +41,7 @@ function Form() {
           onChange={numChangeHandler}
           value={inputNum}
         />
-        <p>Total character : {countNum}</p>
+       { countNum > 0 ?  <p>Length is : {countNum}</p> :  <p>Empty Length!!</p>}
         <input className="input" type="submit" />
       </form>
     </div>
