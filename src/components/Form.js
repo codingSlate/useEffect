@@ -23,7 +23,7 @@ function Form() {
     const cleanTimerID = setTimeout(() => {
       if (inputNum.length >= 0) {
         setCountNum((c) => (c = inputNum.length));
-        console.log(`I am with cleanup 😃 ${millisec} second`);
+        console.log(`I am with cleanup 😃 ${millisec} milisecond`);
       } else {
         console.log('should not be empty');
       }
