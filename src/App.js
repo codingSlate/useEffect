@@ -5,10 +5,6 @@ import Form from './components/Form';
 
 function App() {
   
-  // const inputNameHandler = (data) => {
-  //   console.log(data);
-  // };
-
   return (
     <>
       <Form/>
